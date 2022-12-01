@@ -23,7 +23,7 @@
   <meta name="description" content="本博客的内容是关于读研生涯的学习的一些内容，本人研究方向是人工智能语音领域的研究。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="派大星去抓水母啦(:≡">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/tags/DeepLearning%E3%80%81ASR/index.html">
 <meta property="og:site_name" content="派大星去抓水母啦(:≡">
 <meta property="og:description" content="本博客的内容是关于读研生涯的学习的一些内容，本人研究方向是人工智能语音领域的研究。">
 <meta property="og:locale" content="zh_CN">
@@ -31,20 +31,20 @@
 <meta property="article:tag" content="DeepLearn、ASR、NPL...">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/tags/DeepLearning%E3%80%81ASR/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
+    isHome : false,
     isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>派大星去抓水母啦(:≡</title>
+  <title>标签: DeepLearning、ASR | 派大星去抓水母啦(:≡</title>
   
 
 
@@ -142,119 +142,50 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content tag">
             
-      
+
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/01/%E5%8A%A8%E7%89%A9%E9%9F%B3%E9%A2%91%E5%88%86%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="HeyDream">
-      <meta itemprop="description" content="本博客的内容是关于读研生涯的学习的一些内容，本人研究方向是人工智能语音领域的研究。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="派大星去抓水母啦(:≡">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/01/%E5%8A%A8%E7%89%A9%E9%9F%B3%E9%A2%91%E5%88%86%E7%B1%BB/" class="post-title-link" itemprop="url">动物音频分类</a>
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">DeepLearning、ASR
+          <small>标签</small>
         </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-01 16:32:58 / 修改时间：16:43:33" itemprop="dateCreated datePublished" datetime="2022-12-01T16:32:58+08:00">2022-12-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-          <h2 id="动物语音分类LeNet"><a href="#动物语音分类LeNet" class="headerlink" title="动物语音分类LeNet"></a>动物语音分类LeNet</h2><h3 id="1-准备数据集"><a href="#1-准备数据集" class="headerlink" title="1. 准备数据集"></a>1. 准备数据集</h3><ol>
-<li><p>在github上下载动物语音分类的数据集，或者是通过爬虫爬取动物语音数据</p>
-</li>
-<li><p>下载的音频文件可能不是wav文件，将音频文件格式转换为wav文件。<br>1. 采用qq音乐自带的文件转换工具<br>   2. 通过ffmpeg工具，调用python辨析的文件转换代码</p>
-</li>
-<li><p>通过librosa工具包提取wav文件的特征，再通过matplotlib做出对应的无边框图片(可以不用无边框)。</p>
-</li>
-</ol>
-<h3 id="2-预处理"><a href="#2-预处理" class="headerlink" title="2. 预处理"></a>2. 预处理</h3><pre><code>   1. 将图片变成32*32的灰度图像并转成Tonsor类型
-   2. 对数据集进行分类和做标签。
-</code></pre>
-<p><img src="/%E5%8A%A8%E7%89%A9%E9%9F%B3%E9%A2%91%E5%88%86%E7%B1%BB.assets/%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8E%E5%88%86%E7%B1%BB.png" alt="数据集与分类"></p>
-<h3 id="3-构建网络模型"><a href="#3-构建网络模型" class="headerlink" title="3. 构建网络模型"></a>3. 构建网络模型</h3><p>​	LeNet-5：是Yann LeCun在1998年设计的用于<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB&spm=1001.2101.3001.7020">手写数字识别</a>的卷积神经网络，当年美国大多数银行就是用它来识别支票上面的手写数字的，它是早期卷积神经网络中最有代表性的实验系统之一。 </p>
-<p>​	LeNet-5共有7层（不包括输入层），每层都包含不同数量的训练参数，如下图所示。 </p>
-<p><img src="/%E5%8A%A8%E7%89%A9%E9%9F%B3%E9%A2%91%E5%88%86%E7%B1%BB.assets/LeNet.png" alt="LeNet"></p>
-<p> LeNet-5中主要有2个卷积层、2个池化层、3个<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82&spm=1001.2101.3001.7020">全连接层</a>3种连接方式 </p>
-<h4 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h4><p>​		卷积层采用的都是5 * 5大小的卷积核，且卷积核每次滑动一个像素（步长为1），一个特征图谱使用一个卷积核。每个上层节点的值乘以连接上的参数，把这些乘积及一个偏置参数相加得到一个和。把该和输入激活函数，激活函数的输出即是下一层节点的值。</p>
-<p>​	 卷积操作输出尺寸计算公式：</p>
-<p>​				<strong>Out&#x3D;(In-Kernel+2Padding)&#x2F;Stride+1</strong></p>
-<p>​				<strong>Kernel</strong>:卷积核尺寸，</p>
-<p>​				<strong>Stride</strong>:步长，</p>
-<p>​				<strong>Padding</strong>:边界填充 </p>
-<p>​	若要保证输出尺寸和原尺寸一致,Padding可以设置为:</p>
-<p>​				<strong>Padding</strong> &#x3D; (kernel-1)&#x2F;2)</p>
-<h4 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h4><p>​		 池化操作输出尺寸计算公式同卷积操作一致 </p>
-<p> <strong>LeNet-5第一层：卷积层C1</strong> </p>
-<p>​		输入一张32 <em>32 * 1的图像，进入第一层卷积，其中输入通道是1，卷积核大小是5</em>5，输出通道是6，激活函数采用ReLu函数，也就是将1张32 * 32 <em>1 的图像变成6张28 * 28 * 6的特征图谱。28 &#x3D; (32- 5+2</em>0)&#x2F;1+1。（卷积的操作是扩大图像的特征）</p>
-<p><strong>LeNet-5第二层：池化层S2</strong></p>
-<p>​		S2是一个下采样层。C1层得到的6个28 * 28的特征图谱分别进行2*2（卷积核）为单位，步长为2的下抽样得到6个14 * 14的特征图谱。14 &#x3D;（28-2）&#x2F;2+1。(池化操作相当于压缩每张特征图谱的特征。)</p>
-<p><strong>LeNet-5第三层：卷积层C3</strong></p>
-<p>​		C3层是一个卷积层，其中输入通道是6（6张图片），输出通道是16（16个特征图谱），卷积核大小是5 * 5，步长依旧是0，激活函数采用的同样是ReLu函数。也就是将6 * 14 * 14 转成 16 * 10 * 10 的特征图谱。其中10表示 10 &#x3D; (14 - 5+2*0）&#x2F;1+1。</p>
-<p><strong>LeNet-5第四层：池化层S4</strong></p>
-<p>​		S4是一个下采样层。同S2一样。即最终得到一个16 * 5 * 5的特征图谱。5 &#x3D; (10 -2+0*2)&#x2F;1+1。</p>
-<p><strong>LeNet-5第五层：全连接层C5</strong></p>
-<p>​		C5层是一个全连接层。由于S4层得到的是16 * 5 * 5 的特征图谱。即输入通道是16，采用5*5的卷积核，输出通道是120，激活函数为Relu，于是得到的120 * 1 *1的特征图层，即全连接层。1 &#x3D; (5 -5+0 * 2)&#x2F;1+1。</p>
-<p><strong>LeNet-5第六层：全连接层F6</strong></p>
-<p>​		F6层是全连接层，F6层共有84节点，激活函数是Relu于是得到一个84的全连接层。</p>
-<p><strong>Lenet-5第七层：全连接层Output</strong></p>
-<p>​		因为分类只有10个分类，即共有10个节点，分别代表数字0-9。</p>
-<h2 id="4-参考代码"><a href="#4-参考代码" class="headerlink" title="4. 参考代码"></a>4. 参考代码</h2><ol>
-<li><p><a href="MachineLearning%5Cutils%5CaudioToWav.py">非wav文件转wav文件</a> </p>
-</li>
-<li><p><a href="MachineLearning%5Cutils%5Cmfcc.py">wav文件提取MFCC特征</a> </p>
-</li>
-<li><p><a href="MachineLearning%5Cutils%5CReName.py">文件重命名</a> </p>
-</li>
-<li><p><a href="MachineLearning%5CLeNet%5Cnet.py">网络模型</a></p>
-</li>
-<li><p><a href="MachineLearning%5CLeNet%5CmyData.py">自定义数据集</a> </p>
-</li>
-<li><p><a href="MachineLearning%5CLeNet%5Crun.py">代码运行</a></p>
-</li>
-</ol>
-
-      
+    <div class="collection-year">
+      <span class="collection-header">2022</span>
     </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2022-12-01T16:32:58+08:00"
+              content="2022-12-01">
+          12-01
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2022/12/01/%E5%8A%A8%E7%89%A9%E9%9F%B3%E9%A2%91%E5%88%86%E7%B1%BB/" itemprop="url">
+            <span itemprop="name">动物音频分类</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
+  
+  
+  
 
   
 
